@@ -20,13 +20,12 @@ export function Home() {
   function handleToggleTaskDone(id: number) {
     const updatedTasks = tasks.map((item) => ({ ...item }));
 
-    const foundItem = tasks.find((item) => item.id === id);
+    const foundItem = updatedTasks.find((item) => item.id === id);
 
     if (!foundItem) return;
 
     foundItem.done = !foundItem.done;
     setTasks(updatedTasks);
-    console.log(foundItem);
   }
 
   function handleRemoveTask(id: number) {
